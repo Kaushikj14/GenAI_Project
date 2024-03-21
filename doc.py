@@ -10,7 +10,6 @@ from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 # from langchain_community.llms import OpenAI
 from langchain_openai import OpenAI
-# apikey = "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"
 
 
 st.title("Chatgpt to read Doc files")
@@ -20,9 +19,9 @@ document_directory = "E://testfortext"
 loader = DirectoryLoader(document_directory)
 documents = loader.load()
 # print(documents)
-embeddings = OpenAIEmbeddings(openai_api_key="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")
+embeddings = OpenAIEmbeddings(openai_api_key="YOUR_API_KEY")
 
-llm = OpenAI(openai_api_key="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")
+llm = OpenAI(openai_api_key="YOUR_API_KEY")
 
 db = Chroma.from_documents(documents,embeddings)
 
