@@ -9,8 +9,6 @@ from langchain_community.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 # from langchain_community.llms import OpenAI
 from langchain_openai import OpenAI
-# apikey = "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"
-
 
 st.title("Chatgpt to read text files")
 text = st.text_input("Enter question you want to ask")
@@ -19,9 +17,9 @@ document_directory = "E://testfortext"
 loader = DirectoryLoader(document_directory)
 documents = loader.load()
 # print(documents)
-embeddings = OpenAIEmbeddings(openai_api_key="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")
+embeddings = OpenAIEmbeddings(openai_api_key="Your_API_KEY")
 
-llm = OpenAI(openai_api_key="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")
+llm = OpenAI(openai_api_key="Your_API_KEY")
 
 db = Chroma.from_documents(documents,embeddings)
 
